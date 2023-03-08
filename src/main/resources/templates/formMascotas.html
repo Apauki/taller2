@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Formulario Mascotas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Formulario Mascotas</h2>
+            <form class="form-horizontal" th:action="@{/formMascotas}" method="post" th:object="${mascota}">
+                
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="id">Id:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control disable" id="id" th:field="*{id}">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="nombreMascota">Nombre:</label>
+                    <div class="col-sm-10">          
+                        <input type="text" class="form-control" id="nombreMascota" th:field="*{nombreMascota}" placeholder="Ingrese el nombre de la mascota">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="especie">Especie:</label>
+                    <div class="col-sm-10">          
+                        <input type="text" class="form-control" id="especie" th:field="*{especie}">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="edad">Edad:</label>
+                    <div class="col-sm-10">          
+                        <input type="number" class="form-control" id="edad" th:field="*{edad}">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="genero">Género:</label>
+                    <div class="col-sm-10">          
+                        <input type="text" class="form-control" id="genero" th:field="*{genero}">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="duenio">Dueño:</label>
+                    <div class="col-sm-10">          
+                        <input type="text" class="form-control" id="duenio" th:field="*{duenio}">
+                    </div>
+                </div>
+                
+                <div class="form-group">        
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+                
+            </form>
+</html>
